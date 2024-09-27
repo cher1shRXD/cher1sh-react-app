@@ -2,12 +2,12 @@
   "name": "cher1sh-react-app",
   "version": "1.0.0",
   "description": "cher1shRXD's React app template",
-  "main": "index.tsx",
+  "main": "build/index.js",
   "bin": {
     "create-cher1sh-react-app": "bin/create-cher1sh-react-app.js"
   },
   "keywords": ["react", "template", "create"],
-  "author": "Your Name",
+  "author": "cher1shRXD",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
