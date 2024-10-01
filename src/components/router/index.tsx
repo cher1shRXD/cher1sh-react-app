@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from "../layout";
 import Main from "../Main";
+import NotFound from "../NotFound";
 
 const Router = () => {
   return (
@@ -9,7 +10,7 @@ const Router = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Main />}/>
         </Route>
-        <Route path="*" />
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
   );
