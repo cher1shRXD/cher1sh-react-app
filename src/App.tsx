@@ -7,16 +7,22 @@ const App = () => {
   const { error, setError } = useErrorStore();
 
   useEffect(() => {
-    if (error && error.response) {
-      notification.open({
-        message: "로그인 실패",
-        description: "아이디 또는 비밀번호를 확인해주세요.",
-      });
-    } else {
-      notification.open({
-        message: "로그인 실패",
-        description: "네트워크 에러",
-      });
+    if (!error) return;
+    switch (error.response.data.message) {
+      case "wrong password":
+        notification.open({
+          message: "비밀번호가 틀립니다.",
+        });
+        break;
+      case "user not found":
+        notification.open({
+          message: "존재하지 않는 유저입니다.",
+        });
+        break;
+      default:
+        notification.open({
+          message: "네트워크 에러",
+        });
     }
     setError(null);
   }, [error]);
